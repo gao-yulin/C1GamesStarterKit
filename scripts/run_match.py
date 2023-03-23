@@ -1,6 +1,7 @@
 import os
 import subprocess
 import sys
+import time
 
 # Runs a single game
 def run_single_game(process_command):
@@ -16,6 +17,8 @@ def run_single_game(process_command):
     p.wait()
     print("Finished running match")
 
+# Calculate the running time of the match
+start_time = time.time()
 # Get location of this run file
 file_dir = os.path.dirname(os.path.realpath(__file__))
 parent_dir = os.path.join(file_dir, os.pardir)
@@ -57,3 +60,6 @@ print("Algo 1: ", algo1)
 print("Algo 2:", algo2)
 
 run_single_game("cd {} && java -jar engine.jar work {} {}".format(parent_dir, algo1, algo2))
+
+# Output the running time
+print("--- %s seconds ---" % (time.time() - start_time))

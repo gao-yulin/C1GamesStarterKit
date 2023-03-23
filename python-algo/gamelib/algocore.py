@@ -19,7 +19,7 @@ class AlgoCore(object):
         """
         This function is called once at the start of the game. 
         By default, it just initializes the config. \n
-        You can override it it in algo_strategy.py to perform start of game setup
+        You can override it in algo_strategy.py to perform start of game setup
         """
         self.config = config
 
